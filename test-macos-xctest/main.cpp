@@ -1,13 +1,10 @@
-//
-//  main.cpp
-//  test-macos-xctest
-//
-//  Created by Amélie Renard on 29.04.22.
-//
-
 #include <iostream>
+#include "lib.h"
 
 int main(int argc, const char * argv[]) {
+    
+    fun();
+    
     // insert code here...
     std::cout << "Hello, World!\n";
     return 0;
