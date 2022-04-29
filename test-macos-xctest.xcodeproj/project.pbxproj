@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9C9CF372281C151000660A8E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CF371281C151000660A8E /* main.cpp */; };
+		9C9CF37A281C156600660A8E /* lib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CF379281C156600660A8E /* lib.cpp */; };
+		9C9CF382281C15CC00660A8E /* test.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CF381281C15CC00660A8E /* test.mm */; };
+		9C9CF386281C161100660A8E /* lib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C9CF379281C156600660A8E /* lib.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +28,21 @@
 /* Begin PBXFileReference section */
 		9C9CF36E281C151000660A8E /* test-macos-xctest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "test-macos-xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9CF371281C151000660A8E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9C9CF378281C154E00660A8E /* lib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lib.h; sourceTree = "<group>"; };
+		9C9CF379281C156600660A8E /* lib.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lib.cpp; sourceTree = "<group>"; };
+		9C9CF37F281C15CC00660A8E /* test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C9CF381281C15CC00660A8E /* test.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = test.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9C9CF36B281C151000660A8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9CF37C281C15CC00660A8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				9C9CF370281C151000660A8E /* test-macos-xctest */,
+				9C9CF380281C15CC00660A8E /* test */,
 				9C9CF36F281C151000660A8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				9C9CF36E281C151000660A8E /* test-macos-xctest */,
+				9C9CF37F281C15CC00660A8E /* test.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +74,18 @@
 			isa = PBXGroup;
 			children = (
 				9C9CF371281C151000660A8E /* main.cpp */,
+				9C9CF378281C154E00660A8E /* lib.h */,
+				9C9CF379281C156600660A8E /* lib.cpp */,
 			);
 			path = "test-macos-xctest";
+			sourceTree = "<group>";
+		};
+		9C9CF380281C15CC00660A8E /* test */ = {
+			isa = PBXGroup;
+			children = (
+				9C9CF381281C15CC00660A8E /* test.mm */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +108,23 @@
 			productReference = 9C9CF36E281C151000660A8E /* test-macos-xctest */;
 			productType = "com.apple.product-type.tool";
 		};
+		9C9CF37E281C15CC00660A8E /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C9CF383281C15CC00660A8E /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				9C9CF37B281C15CC00660A8E /* Sources */,
+				9C9CF37C281C15CC00660A8E /* Frameworks */,
+				9C9CF37D281C15CC00660A8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = 9C9CF37F281C15CC00660A8E /* test.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +135,9 @@
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					9C9CF36D281C151000660A8E = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					9C9CF37E281C15CC00660A8E = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
@@ -110,9 +156,20 @@
 			projectRoot = "";
 			targets = (
 				9C9CF36D281C151000660A8E /* test-macos-xctest */,
+				9C9CF37E281C15CC00660A8E /* test */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C9CF37D281C15CC00660A8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9C9CF36A281C151000660A8E /* Sources */ = {
@@ -120,6 +177,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9CF372281C151000660A8E /* main.cpp in Sources */,
+				9C9CF37A281C156600660A8E /* lib.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C9CF37B281C15CC00660A8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C9CF382281C15CC00660A8E /* test.mm in Sources */,
+				9C9CF386281C161100660A8E /* lib.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -228,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -255,6 +322,34 @@
 			};
 			name = Release;
 		};
+		9C9CF384281C15CC00660A8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4CS9M2FXF6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ss.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
+		9C9CF385281C15CC00660A8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4CS9M2FXF6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ss.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -272,6 +367,15 @@
 			buildConfigurations = (
 				9C9CF376281C151000660A8E /* Debug */,
 				9C9CF377281C151000660A8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C9CF383281C15CC00660A8E /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C9CF384281C15CC00660A8E /* Debug */,
+				9C9CF385281C15CC00660A8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
