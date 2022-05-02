@@ -53,7 +53,7 @@ jobs:
           xcodebuild test -project test-macos-xctest.xcodeproj -scheme test -enableCodeCoverage YES -derivedDataPath build
       - name: Code Coverage
         run: |
-          binPath=$(find derivedDataPath/ -name lib.o)
+          binPath=$(find build/ -name lib.o)
           llvm-cov show --instr-profile build/Build/ProfileData/*/Coverage.profdata $binPath > coverage.txt
       - name: Run sonar-scanner
         env:
