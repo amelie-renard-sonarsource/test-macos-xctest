@@ -49,7 +49,7 @@ jobs:
           echo "$HOME/.sonar/build-wrapper-macosx-x86" >> $GITHUB_PATH
       - name: Run build-wrapper
         run: |
-          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} xcodebuild -project test-macos-xctest.xcodeproj/ -scheme test-macos-xctest -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNONG_REQUIRED=NO  
+          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} xcodebuild -project test-macos-xctest.xcodeproj/ -scheme test-macos-xctest -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO  
           # xcodebuild test -project test-macos-xctest.xcodeproj -scheme test -enableCodeCoverage YES -derivedDataPath build
       - name: Code Coverage
         run: |
