@@ -49,11 +49,11 @@ jobs:
           echo "$HOME/.sonar/build-wrapper-macosx-x86" >> $GITHUB_PATH
       - name: Run build-wrapper
         run: |
-          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} xcodebuild -project test-macos-xctest.xcodeproj/ -scheme test-macos-xctest -derivedDataPath Build/ -enableCodeCoverage YES clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO  
-          # xcodebuild test -project test-macos-xctest.xcodeproj -scheme test -enableCodeCoverage YES -derivedDataPath build
+          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} xcodebuild -project test-macos-xctest.xcodeproj -scheme test-macos-xctest
+          xcodebuild test -project test-macos-xctest.xcodeproj -scheme test -enableCodeCoverage YES -derivedDataPath build
       - name: Code Coverage
         run: |
-          bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
+          bash xccov-to-sonarqube-generic.sh build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
           # binPath=$(find build/ -name lib.o)
           #llvm-cov show --instr-profile build/Build/ProfileData/*/Coverage.profdata $binPath > coverage.txt
       - name: Run sonar-scanner
